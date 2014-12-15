@@ -5,7 +5,8 @@ from scrabble_server import views
 admin.autodiscover()
 
 genericViews = patterns('',
-	url(r'^$', views.index, name='index')
+	url(r'^$', views.index, name='index'),
+	url(r'^login/$', views.login, name='login')
 )
 
 urlpatterns = patterns('',
