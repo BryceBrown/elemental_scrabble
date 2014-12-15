@@ -7,7 +7,6 @@ https://docs.djangoproject.com/en/1.6/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
-from django.core.cache import caches
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -23,6 +22,11 @@ SECRET_KEY = '_yc5-!ds$^c)9ii_e9)!=$)_%@c2s%s9n@4yq8@j!#^buy)2=%'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+
+TEMPLATE_DIRS = (
+    'templates'
+)
+
 
 ALLOWED_HOSTS = []
 

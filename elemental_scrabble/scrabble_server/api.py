@@ -10,3 +10,6 @@ GetGame
 PlayWord
 TODO - GetStats
 '''
+
+class Games(APIView):
+	
