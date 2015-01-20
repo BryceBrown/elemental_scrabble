@@ -12,3 +12,21 @@ def index(request):
 
 def login(request):
 	return render_to_response('login.html', {}, context_instance=RequestContext(request))
+
+"""
+Form post views. Django view method
+"""
+def attempt_login(request):
+	try:
+		username = request.POST['username']
+		password = request.POST['password']
+	except(KeyError):
+		raise Http404
+
+	user = authenticate(username=username,password=password)
+	
+	if user is not None:		
+		login(request, user)		
+		return HttpResponseRedirect('/')
+	else:
+		return HttpResponseRedirect('/Login/')
